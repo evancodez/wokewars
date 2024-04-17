@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Woke Wars</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="loginSection">
+        <input type="text" id="usernameInput" placeholder="Enter your username...">
+        <button onclick="startGame()">Start Game</button>
+    </div>
+    <div id="profileSection" style="display:none;">
+        <h1>Welcome to your Profile, <span id="usernameDisplay"></span>!</h1>
+        <p id="bio">Hi! I am a straight white male.</p>
+        <div id="notifications"></div>
+        <button onclick="addPronouns()">Add Pronouns</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
