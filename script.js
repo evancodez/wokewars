@@ -1,14 +1,22 @@
-document.getElementById('profileSection').style.display = 'block';
+function setupProfile() {
+    var username = document.getElementById('usernameInput').value.trim();
+    if(username) {
+        document.getElementById('usernameDisplay').textContent = username;
+        document.getElementById('startupScreen').style.display = 'none';
+        document.getElementById('profileSection').style.display = 'block';
+    } else {
+        alert("Please enter a username to continue.");
+    }
+}
 
-function updateUsername() {
-    var username = document.getElementById('usernameInput').value;
-    document.getElementById('usernameDisplay').textContent = username;
+function enableSaveButton() {
+    document.getElementById('savePronouns').disabled = false;
 }
 
 function addCustomPronouns() {
-    var pronouns = document.getElementById('customPronouns').value;
-    if (pronouns) {
-        document.getElementById('bio').textContent = `Hi! I am a ${pronouns} straight white male.`;
+    var pronouns = document.getElementById('customPronouns').value.trim();
+    if(pronouns) {
+        document.getElementById('bio').textContent = `Hi! I am a ${pronouns}.`;
         increaseScore(10); // Increase score by 10 for adding pronouns
     }
 }
@@ -18,10 +26,3 @@ function increaseScore(amount) {
     currentScore += amount;
     document.getElementById('score').textContent = currentScore;
 }
-
-setTimeout(function() {
-    let tweetDiv = document.getElementById('tweetContainer');
-    tweetDiv.innerHTML = `<p>Your profile lacks inclusive pronouns!</p>`;
-    tweetDiv.style.display = 'block';
-    increaseScore(-5); // Reduce score by 5 for criticism
-}, 5000); // Trigger the first tweet after 5 seconds

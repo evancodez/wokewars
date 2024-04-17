@@ -6,16 +6,20 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <img src="sheepconnect.png" alt="Logo" id="logo">
+    <div id="startupScreen">
+        <h1>Welcome to Woke Wars!</h1>
+        <input type="text" id="usernameInput" placeholder="Enter Username" autofocus>
+        <button onclick="setupProfile()">Start</button>
+    </div>
+    <div id="profileSection" style="display:none;">
+        <header>
+            <img src="<your-logo-file-here.png>" alt="Logo" id="logo">
             <div class="woke-score">WokeScore: <span id="score">0</span></div>
-        </div>
-        <h1>SheepConnect</h1>
-    </header>
-    <div id="profileSection">
-        <h2>Welcome to Your Profile, <input type="text" id="usernameInput" placeholder="Enter Username" onchange="updateUsername()"></h2>
-        <p id="bio">Hi! I am a... <input type="text" id="customPronouns" placeholder="Enter Custom Pronouns" onchange="addCustomPronouns()"></p>
+        </header>
+        <h2>Welcome to Your Profile, <span id="usernameDisplay"></span>!</h2>
+        <p id="bio">Add pronouns to personalize your bio.</p>
+        <input type="text" id="customPronouns" placeholder="Enter Custom Pronouns" oninput="enableSaveButton()">
+        <button id="savePronouns" onclick="addCustomPronouns()" disabled>Save Pronouns</button>
         <div id="tweetContainer"></div>
     </div>
 

@@ -1,54 +1,57 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
     background-color: #f4f4f9;
-    color: #333;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 header {
-    background-color: #0077CC;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.header-content {
-    display: flex;
-    align-items: center;
+    padding: 10px;
 }
 
 #logo {
-    height: 30px;
+    height: 50px;
 }
 
 .woke-score {
     font-size: 20px;
-    color: #ffd700; /* Gold color for the score */
+    color: #ffd700;  /* Gold color for the score */
 }
 
-#profileSection {
-    max-width: 600px;
-    margin: 20px auto;
+#startupScreen, #profileSection {
+    background: white;
     padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    width: 300px;
+    text-align: center;
 }
 
 input[type="text"] {
-    padding: 5px;
-    margin: 5px;
+    width: 90%;
+    padding: 10px;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-#tweetContainer {
-    background-color: #efefef;
-    border-left: 5px solid red;
+button {
+    padding: 10px 20px;
+    background-color: #0077CC;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
     margin-top: 20px;
-    padding: 10px;
-    font-style: italic;
+}
+
+button:disabled {
+    background-color: #ccc;
 }
