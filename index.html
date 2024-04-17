@@ -6,17 +6,23 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="loginSection">
-        <input type="text" id="usernameInput" placeholder="Enter your username...">
-        <button onclick="startGame()">Start Game</button>
-    </div>
-    <div id="profileSection" style="display:none;">
-        <h1>Welcome to your Profile, <span id="usernameDisplay"></span>!</h1>
-        <p id="bio">Hi! I am a straight white male.</p>
-        <div id="notifications"></div>
-        <button onclick="addPronouns()">Add Pronouns</button>
+    <header>
+        <img src="<your-logo-file-here.png>" alt="Logo" id="logo">
+        <h1>Woke Wars</h1>
+    </header>
+    <div id="profileSection">
+        <h2>Welcome to Your Profile, <span id="usernameDisplay"></span>!</h2>
+        <p id="bio">Hi! I am a...</p>
+        <select id="pronounSelector" onchange="addPronouns()">
+            <option value="">Select your pronouns</option>
+            <option value="he/him">he/him</option>
+            <option value="she/her">she/her</option>
+            <option value="custom">Custom</option>
+        </select>
+        <div id="tweetContainer"></div>
     </div>
 
     <script src="script.js"></script>
 </body>
 </html>
+

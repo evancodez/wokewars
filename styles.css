@@ -1,34 +1,45 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 20px;
+    margin: 0;
+    padding: 0;
     background-color: #f4f4f9;
     color: #333;
 }
 
-#loginSection, #profileSection {
+header {
+    background-color: #0077CC;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    position: relative;
+}
+
+#logo {
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    height: 30px;
+}
+
+#profileSection {
+    max-width: 600px;
+    margin: 20px auto;
     padding: 20px;
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    margin-top: 20px;
 }
 
-input[type="text"] {
+select {
     padding: 10px;
-    margin-right: 10px;
-    width: 200px;
+    width: 100%;
+    margin-top: 10px;
 }
 
-button {
-    background-color: #0084ff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-button:hover {
-    background-color: #0056b3;
+#tweetContainer {
+    background-color: #efefef;
+    border-left: 5px solid red;
+    margin-top: 20px;
+    padding: 10px;
+    font-style: italic;
 }

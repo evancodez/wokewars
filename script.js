@@ -1,19 +1,22 @@
-document.getElementById('loginSection').style.display = 'block';
-document.getElementById('profileSection').style.display = 'none';
-
-function startGame() {
-    var username = document.getElementById('usernameInput').value;
+document.addEventListener('DOMContentLoaded', function () {
+    var username = prompt("Enter your username:");
     document.getElementById('usernameDisplay').textContent = username;
-    document.getElementById('loginSection').style.display = 'none';
-    document.getElementById('profileSection').style.display = 'block';
+    document.getElementById('bio').textContent += ` straight white male.`;
+
     setTimeout(function() {
-        document.getElementById('notifications').innerHTML = `<p>@${username} is not an ally to the trans community. No pronouns in bio.</p>`;
-    }, 2000);
-}
+        let tweetDiv = document.getElementById('tweetContainer');
+        tweetDiv.innerHTML = `<p>@${username} is not an ally to the trans community. No pronouns in bio.</p>`;
+        tweetDiv.style.display = 'block';
+    }, 5000); // Change this to a longer delay if needed
+});
 
 function addPronouns() {
-    let pronouns = prompt("Enter your pronouns:");
-    let currentBio = document.getElementById('bio').textContent;
-    document.getElementById('bio').textContent = `Pronouns: ${pronouns} | ${currentBio}`;
-    document.getElementById('notifications').innerHTML += `<p>Pronouns added!</p>`;
+    var pronouns = document.getElementById('pronounSelector').value;
+    if (pronouns === "custom") {
+        pronouns = prompt("Enter your custom pronouns:");
+    }
+    if (pronouns) {
+        document.getElementById('bio').textContent = `Hi! I am a ${pronouns} straight white male.`;
+        alert("Pronouns added!");
+    }
 }
