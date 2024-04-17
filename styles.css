@@ -12,13 +12,23 @@ header {
     padding: 10px 20px;
     text-align: center;
     position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
 }
 
 #logo {
-    position: absolute;
-    left: 20px;
-    top: 10px;
     height: 30px;
+}
+
+.woke-score {
+    font-size: 20px;
+    color: #ffd700; /* Gold color for the score */
 }
 
 #profileSection {
@@ -30,10 +40,9 @@ header {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-select {
-    padding: 10px;
-    width: 100%;
-    margin-top: 10px;
+input[type="text"] {
+    padding: 5px;
+    margin: 5px;
 }
 
 #tweetContainer {
