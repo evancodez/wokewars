@@ -6,20 +6,30 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="startupScreen">
+    <div id="welcomeScreen">
+        <h1>Welcome to Sheep Connect!</h1>
+        <p>To get started, enter your username:</p>
+        <input type="text" id="welcomeUsernameInput" placeholder="Username" autofocus>
+        <button onclick="initializeProfile()">Enter</button>
+    </div>
+    <div id="startupScreen" style="display:none;">
         <h1>Sheep Social!</h1>
-        <input type="text" id="usernameInput" placeholder="Enter Username" autofocus>
+        <input type="text" id="usernameInput" placeholder="Enter Username">
         <button onclick="setupProfile()">Start</button>
     </div>
     <div id="profileSection" style="display:none;">
         <header>
-            <img src="sheepconnect.png" alt="Logo" id="logo">
+            <img src="images/sheepconnect.png" alt="Logo" id="logo">
             <div class="woke-score">WokeScore: <span id="score">0</span></div>
         </header>
         <h2>Welcome to Your Profile, <span id="usernameDisplay"></span>!</h2>
-        <p id="bio">Add pronouns to personalize your bio.</p>
-        <input type="text" id="customPronouns" placeholder="Enter Custom Pronouns" oninput="enableSaveButton()">
-        <button id="savePronouns" onclick="addCustomPronouns()" disabled>Save Pronouns</button>
+        <p id="bio">Add pronouns to personalize your bio:</p>
+        <select id="pronounSelector" onchange="addCustomPronouns()">
+            <option value="">-- Select Pronouns --</option>
+            <option value="he/him">He/Him (10 points)</option>
+            <option value="she/her">She/Her (20 points)</option>
+            <option value="they/them">They/Them (30 points)</option>
+        </select>
         <div id="tweetContainer"></div>
     </div>
 
